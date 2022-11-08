@@ -1,6 +1,6 @@
 import {log} from "util";
 
-console.log('lesson 2');
+// console.log('lesson 2');
 
 // Lexical environment
 // http://jsflow.org/docs/lex-env/
@@ -96,7 +96,8 @@ function superSum(num: number) {
 }
 
 // @ts-ignore
-console.log(superSum(6)(3, 4, 5, 6)(20, 30));
+
+// console.log(superSum(6)(3, 4, 5, 6)(20, 30));
 
 // Task 05
 // решить все задачи по рекурсии которые даны в конце статьи https://learn.javascript.ru/recursion
@@ -287,7 +288,7 @@ function customFlat1(arr: Array<any>, acc: Array<number> = []) {
     return acc;
 }
 
-console.log(customFlat1([1, 2, 3, [4, 5, [6,7],[8],[[9]], 10], 11, 12]))
+// console.log(customFlat1([1, 2, 3, [4, 5, [6,7],[8],[[9]], 10], 11, 12]))
 
 // just a plug
 export default () => {

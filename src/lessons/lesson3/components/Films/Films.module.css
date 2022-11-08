@@ -1,0 +1,18 @@
+.wrapper {
+    margin-bottom: 20px;
+}
+.filmsWrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.paginationWrapper {
+
+}
+
+.paginationWrapper span {
+    display: inline-block;
+    margin-right: 3px;
+    text-decoration: underline;
+    cursor: pointer;
+}

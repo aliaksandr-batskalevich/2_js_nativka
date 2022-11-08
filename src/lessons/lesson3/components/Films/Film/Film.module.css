@@ -1,0 +1,19 @@
+.filmWrapper {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.posterWrapper img {
+    display: block;
+    width: 150px;
+}
+
+.descriptions {
+
+}
+
+.descriptions h4, p {
+    margin: 0;
+    max-width: 150px;
+}
