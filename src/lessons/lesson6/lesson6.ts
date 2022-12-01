@@ -217,9 +217,7 @@ class Buyer {
 
     static filterByNumber(number: number) {
         // @ts-ignore
-        return (buyer) => {
-           return buyer.number.split(String(number)).length > 1
-        }
+        return (buyer) => buyer.number.split(String(number)).length > 1
     }
 
 }
@@ -227,14 +225,16 @@ class Buyer {
 let buyersArr = [
     new Buyer('Batskalevich', 'Aliaksandr', 'Brest', '1230'),
     new Buyer('Klimovich', 'Roman', 'Brest', '7856'),
-    new Buyer('Batskalevich', 'Marya', 'Brest', '1234'),
+    new Buyer('Batskalevich', 'Marry', 'Brest', '1234'),
 ]
 
-// console.log(buyersArr);
-// buyersArr = buyersArr.sort(Buyer.sortByLastName);
-// console.log(buyersArr);
-// let buyersArrFilter = buyersArr.filter(Buyer.filterByNumber(123));
-// console.log(buyersArrFilter);
+console.log(buyersArr);
+
+buyersArr = buyersArr.sort(Buyer.sortByLastName);
+console.log(buyersArr);
+
+let buyersArrFilter = buyersArr.filter(Buyer.filterByNumber(123));
+console.log(buyersArrFilter);
 
 // Task 05
 // Создать класс машина - имеющий марку, число цилиндров, мощность. Определить конструктор и функцию печати.
@@ -243,16 +243,19 @@ let buyersArr = [
 
 class Car {
     name: string
-    numOfCilinders: number
+    numOfCylinders: number
     power: number
+
     constructor(name: string, numOfCilinders: number, power: number) {
         this.name = name;
-        this.numOfCilinders = numOfCilinders;
+        this.numOfCylinders = numOfCilinders;
         this.power = power;
     }
+
     render() {
-        console.log(`Print ${this.name} - ${this.numOfCilinders} - ${this.power}`);
+        console.log(`Print ${this.name} - ${this.numOfCylinders} - ${this.power}`);
     }
+
     reName(newName: string) {
         this.name = newName;
     }
@@ -260,13 +263,14 @@ class Car {
 
 class Truck extends Car {
     loadCapacity: number
-    constructor(name: string, numOfCilinders: number, power: number, loadCapacity: number) {
-        super(name, numOfCilinders, power);
+
+    constructor(name: string, numOfCylinders: number, power: number, loadCapacity: number) {
+        super(name, numOfCylinders, power);
         this.loadCapacity = loadCapacity;
     }
 
     render() {
-        console.log(`Print ${this.name} - ${this.numOfCilinders} - ${this.power} - ${this.loadCapacity}`);
+        console.log(`Print ${this.name} - ${this.numOfCylinders} - ${this.power} - ${this.loadCapacity}`);
     }
 
     reLoad (newLoad: number) {
@@ -274,13 +278,11 @@ class Truck extends Car {
     }
 }
 
-let iveco = new Truck('iveco', 4, 100, 2);
-
 
 let carsArr = [
     new Car('Volvo XC90', 5, 185),
     new Car('Toyota Camry', 4, 135),
-    iveco,
+    new Truck('iveco', 4, 100, 2),
 ];
 
 carsArr[0].reName(carsArr[0].name + ' MY!');
