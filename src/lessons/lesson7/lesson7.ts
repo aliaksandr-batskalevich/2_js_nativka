@@ -20,11 +20,45 @@ console.log('Lesson 7');
 // walk => `${this.name} walking`
 // проверить, что методы работают
 
+class Animal {
+    _name: string
+    constructor(name: string) {
+        this._name = name;
+    }
+    walk() {
+        return `${this._name} walking`;
+    }
+    eat() {
+        return `${this._name} eating`;
+    }
+    sleep() {
+        return `${this._name} sleeping`;
+    }
+}
+
+let cat = new Animal('Cat');
+// console.log(cat.eat(), cat.sleep(), cat.walk());
+
 
 //Task 02
 // Реализовать класс Monkey на базе класса Animal,  конструктор принимает name(по умолчанию 'Monkey') в качестве
 // параметра, реализовать методы roar и climb аналогично классу Animal
 // проверить, что все методы работают
+
+class Monkey extends Animal {
+    constructor(name: string = 'Monkey') {
+        super(name);
+    }
+    roar() {
+        return `${this._name} roaring`;
+    }
+    climb() {
+        return `${this._name} climbing`;
+    }
+}
+
+let monkey = new Monkey();
+// console.log(monkey.sleep(), monkey.climb());
 
 
 //Task 03
@@ -32,6 +66,24 @@ console.log('Lesson 7');
 // параметра, реализовать методы speak и think аналогично классу Animal
 // проверить, что все методы работают
 
+class Human extends Monkey {
+    constructor(name: string = 'Human') {
+        super(name);
+    }
+    speak() {
+        return `${this._name} speaking`;
+    }
+    think() {
+        return `${this._name} thinking`;
+    }
+}
+let human = new Human();
+// console.log(human.eat(), human.climb(), human.think());
+
+let animalPrototype = Object.getPrototypeOf(cat);
+let monkeyPrototype = Object.getPrototypeOf(monkey);
+
+console.dir(monkeyPrototype);
 
 // Task 04
 // Реализовать таски 01-03 через функции конструкторы в отдельном JS файле, реализовать наследование
